@@ -1,0 +1,23 @@
+# API Information
+
+
+main: {
+  kit: {
+    info: {
+      contact: {
+        url: "https://yesno.wtf/api"
+      }
+      description: "This API generates a random 'Yes' or 'No' response."
+      servers: [
+        {
+          description: "Production server"
+          url: "https://yesno.wtf"
+        }
+      ]
+      title: "YesNo Generator"
+      version: "1.0.0"
+    }
+  }
+}
+
+}

@@ -1,0 +1,82 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "YesNo Generator",
+    "description": "This API generates a random 'Yes' or 'No' response.",
+    "version": "1.0.0",
+    "contact": {
+      "url": "https://yesno.wtf/api"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://yesno.wtf",
+      "description": "Production server"
+    }
+  ],
+  "paths": {
+    "/api": {
+      "get": {
+        "summary": "Get random Yes or No answer",
+        "description": "Returns a random 'Yes' or 'No' answer with an accompanying GIF image.",
+        "operationId": "getYesNoAnswer",
+        "parameters": [
+          {
+            "name": "force",
+            "in": "query",
+            "description": "Force a specific answer ('yes' or 'no')",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "yes",
+                "no"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with yes/no answer",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "answer": {
+                      "type": "string",
+                      "description": "The answer: 'yes' or 'no'",
+                      "enum": [
+                        "yes",
+                        "no"
+                      ]
+                    },
+                    "forced": {
+                      "type": "boolean",
+                      "description": "Indicates whether the answer was forced via query parameter"
+                    },
+                    "image": {
+                      "type": "string",
+                      "format": "uri",
+                      "description": "URL of a GIF image corresponding to the answer"
+                    }
+                  },
+                  "required": [
+                    "answer",
+                    "forced",
+                    "image"
+                  ]
+                },
+                "example": {
+                  "answer": "no",
+                  "forced": false,
+                  "image": "https://yesno.wtf/assets/no/24-159febcfd655625c38c147b65e5be565.gif"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
