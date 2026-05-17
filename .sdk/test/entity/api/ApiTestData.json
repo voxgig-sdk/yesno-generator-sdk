@@ -4,17 +4,20 @@
       "API00": {
         "answer": "s1e",
         "forced": false,
-        "image": "s20"
+        "image": "s20",
+        "id": "API00"
       },
       "API01": {
         "answer": "s3c",
         "forced": false,
-        "image": "s3e"
+        "image": "s3e",
+        "id": "API01"
       },
       "API02": {
         "answer": "s5a",
         "forced": false,
-        "image": "s5c"
+        "image": "s5c",
+        "id": "API02"
       }
     }
   },

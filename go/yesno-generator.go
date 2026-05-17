@@ -1,10 +1,10 @@
 package voxgigyesnogeneratorsdk
 
 import (
-	"github.com/voxgig-sdk/yesno-generator-sdk/core"
-	"github.com/voxgig-sdk/yesno-generator-sdk/entity"
-	"github.com/voxgig-sdk/yesno-generator-sdk/feature"
-	_ "github.com/voxgig-sdk/yesno-generator-sdk/utility"
+	"github.com/voxgig-sdk/yesno-generator-sdk/go/core"
+	"github.com/voxgig-sdk/yesno-generator-sdk/go/entity"
+	"github.com/voxgig-sdk/yesno-generator-sdk/go/feature"
+	_ "github.com/voxgig-sdk/yesno-generator-sdk/go/utility"
 )
 
 // Type aliases preserve external API.

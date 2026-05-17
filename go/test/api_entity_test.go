@@ -9,10 +9,10 @@ import (
 	"testing"
 	"time"
 
-	sdk "github.com/voxgig-sdk/yesno-generator-sdk"
-	"github.com/voxgig-sdk/yesno-generator-sdk/core"
+	sdk "github.com/voxgig-sdk/yesno-generator-sdk/go"
+	"github.com/voxgig-sdk/yesno-generator-sdk/go/core"
 
-	vs "github.com/voxgig/struct"
+	vs "github.com/voxgig-sdk/yesno-generator-sdk/go/utility/struct"
 )
 
 func TestApiEntity(t *testing.T) {

@@ -4,7 +4,7 @@ import (
 	"log/slog"
 	"os"
 
-	"github.com/voxgig-sdk/yesno-generator-sdk/core"
+	"github.com/voxgig-sdk/yesno-generator-sdk/go/core"
 )
 
 type LogFeature struct {

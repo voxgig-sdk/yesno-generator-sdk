@@ -3,7 +3,7 @@ package sdktest
 import (
 	"testing"
 
-	sdk "github.com/voxgig-sdk/yesno-generator-sdk"
+	sdk "github.com/voxgig-sdk/yesno-generator-sdk/go"
 )
 
 func TestCustomUtility(t *testing.T) {

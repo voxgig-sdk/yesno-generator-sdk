@@ -6,8 +6,8 @@ import (
 	"strings"
 	"testing"
 
-	sdk "github.com/voxgig-sdk/yesno-generator-sdk"
-	"github.com/voxgig-sdk/yesno-generator-sdk/core"
+	sdk "github.com/voxgig-sdk/yesno-generator-sdk/go"
+	"github.com/voxgig-sdk/yesno-generator-sdk/go/core"
 )
 
 func TestApiDirect(t *testing.T) {
