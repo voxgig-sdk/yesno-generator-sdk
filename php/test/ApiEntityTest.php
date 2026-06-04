@@ -85,7 +85,6 @@ function api_basic_setup($extra)
         "YESNOGENERATOR_TEST_API_ENTID" => $idmap,
         "YESNOGENERATOR_TEST_LIVE" => "FALSE",
         "YESNOGENERATOR_TEST_EXPLAIN" => "FALSE",
-        "YESNOGENERATOR_APIKEY" => "NONE",
     ]);
 
     $idmap_resolved = Helpers::to_map(
@@ -97,7 +96,6 @@ function api_basic_setup($extra)
     if ($env["YESNOGENERATOR_TEST_LIVE"] === "TRUE") {
         $merged_opts = Vs::merge([
             [
-                "apikey" => $env["YESNOGENERATOR_APIKEY"],
             ],
             $extra ?? [],
         ]);

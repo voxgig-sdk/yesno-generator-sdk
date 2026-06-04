@@ -59,14 +59,12 @@ def _api_direct_setup(mockres):
     env = runner.env_override({
         "YESNOGENERATOR_TEST_API_ENTID": {},
         "YESNOGENERATOR_TEST_LIVE": "FALSE",
-        "YESNOGENERATOR_APIKEY": "NONE",
     })
 
     live = env.get("YESNOGENERATOR_TEST_LIVE") == "TRUE"
 
     if live:
         merged_opts = {
-            "apikey": env.get("YESNOGENERATOR_APIKEY"),
         }
         client = YesnoGeneratorSDK(merged_opts)
         return {

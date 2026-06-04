@@ -16,7 +16,17 @@
           }
         ],
         "title": "YesNo Generator",
-        "version": "1.0.0"
+        "version": "1.0.0",
+        "tagline": "Random yes/no/maybe answers with matching GIFs for tongue-in-cheek decision making",
+        "homepage": "https://yesno.wtf",
+        "docs_url": "https://yesno.wtf/api",
+        "license_short": "No licence published; treat as free public use",
+        "license_md": "- No licence terms are published on the API page or homepage.\n- No API key or authentication is required.\n- Response GIFs are hosted by yesno.wtf; check before redistributing them.\n- Treat as a best-effort hobby service with no SLA.",
+        "about_md": "[yesno.wtf](https://yesno.wtf) is a small novelty API that answers any question with a random `yes`, `no`, or (rarely) `maybe`, along with a matching animated GIF. It was built by Mo, Martin and Michi and is described on the homepage as a \"foolproof\" decision maker.\n\nWhat you get from the API:\n- A single `GET /api` endpoint returning JSON.\n- `answer` — the string `yes`, `no`, or `maybe`.\n- `forced` — boolean indicating whether the answer was pinned via the `force` query parameter.\n- `image` — URL of a GIF that matches the answer.\n- Optional `force` query parameter (`yes`, `no`, or `maybe`) to lock the response.\n\nOperational notes: no authentication, CORS is enabled, and the service is publicly catalogued as healthy with sub-200 ms typical responses. A `maybe` is returned roughly once every 10,000 requests as a novelty feature.",
+        "entity_desc": {
+          "api": "The single random-answer resource exposed at `GET /api`, returning `answer`, `forced`, and `image` fields."
+        },
+        "auth": false
       },
       "config": {
         "auth": {
@@ -24,7 +34,15 @@
         },
         "headers": {
           "content-type": "application/json"
-        }
+        },
+        "docs_order": [
+          "ts",
+          "py",
+          "php",
+          "go",
+          "rb",
+          "lua"
+        ]
       },
       "entity": {
         "api": {
