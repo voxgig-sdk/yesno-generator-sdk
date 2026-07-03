@@ -74,12 +74,14 @@ function directSetup(mockres?: any) {
   const env = envOverride({
     'YESNOGENERATOR_TEST_API_ENTID': {},
     'YESNOGENERATOR_TEST_LIVE': 'FALSE',
+    'YESNOGENERATOR_APIKEY': 'NONE',
   })
 
   const live = 'TRUE' === env.YESNOGENERATOR_TEST_LIVE
 
   if (live) {
     const client = new YesnoGeneratorSDK({
+      apikey: env.YESNOGENERATOR_APIKEY,
     })
 
     let idmap: any = env['YESNOGENERATOR_TEST_API_ENTID']

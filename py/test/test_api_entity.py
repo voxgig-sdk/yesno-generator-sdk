@@ -91,6 +91,7 @@ def _api_basic_setup(extra):
         "YESNOGENERATOR_TEST_API_ENTID": idmap,
         "YESNOGENERATOR_TEST_LIVE": "FALSE",
         "YESNOGENERATOR_TEST_EXPLAIN": "FALSE",
+        "YESNOGENERATOR_APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
@@ -101,6 +102,7 @@ def _api_basic_setup(extra):
     if env.get("YESNOGENERATOR_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
+                "apikey": env.get("YESNOGENERATOR_APIKEY"),
             },
             extra or {},
         ])

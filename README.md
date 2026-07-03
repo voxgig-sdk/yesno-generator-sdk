@@ -1,21 +1,8 @@
 # YesnoGenerator SDK
 
-Random yes/no/maybe answers with matching GIFs for tongue-in-cheek decision making
+YesNo Generator client, generated from the OpenAPI spec.
 
 > TypeScript, Python, PHP, Golang, Ruby, Lua SDKs, a CLI, an interactive REPL, and an MCP server for AI agents — all generated from one OpenAPI spec by [@voxgig/sdkgen](https://github.com/voxgig/sdkgen).
-
-## About YesNo Generator
-
-[yesno.wtf](https://yesno.wtf) is a small novelty API that answers any question with a random `yes`, `no`, or (rarely) `maybe`, along with a matching animated GIF. It was built by Mo, Martin and Michi and is described on the homepage as a "foolproof" decision maker.
-
-What you get from the API:
-- A single `GET /api` endpoint returning JSON.
-- `answer` — the string `yes`, `no`, or `maybe`.
-- `forced` — boolean indicating whether the answer was pinned via the `force` query parameter.
-- `image` — URL of a GIF that matches the answer.
-- Optional `force` query parameter (`yes`, `no`, or `maybe`) to lock the response.
-
-Operational notes: no authentication, CORS is enabled, and the service is publicly catalogued as healthy with sub-200 ms typical responses. A `maybe` is returned roughly once every 10,000 requests as a novelty feature.
 
 ## Try it
 
@@ -49,27 +36,31 @@ gem install yesno-generator-sdk
 luarocks install yesno-generator-sdk
 ```
 
-## 30-second quickstart
+## Quickstart
 
 ### TypeScript
 
 ```ts
 import { YesnoGeneratorSDK } from 'yesno-generator'
 
-const client = new YesnoGeneratorSDK({})
+const client = new YesnoGeneratorSDK({
+  apikey: process.env.YESNO-GENERATOR_APIKEY,
+})
 
+// Load api data
+const api = await client.Api().load({})
+console.log(api.data)
 ```
 
-See the [TypeScript README](ts/README.md) for the
-full guide, or scroll down for the same example in other languages.
+See the [TypeScript README](ts/README.md) for the full guide.
 
-## What's in the box
+## Surfaces
 
-| Surface | Use it for | Path |
-| --- | --- | --- |
-| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | App integration | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
-| **CLI** | Scripts, CI, ops, one-off API calls | `go-cli/` |
-| **MCP server** | AI agents (Claude, Cursor, Cline) | `go-mcp/` |
+| Surface | Path |
+| --- | --- |
+| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
+| **CLI** | `go-cli/` |
+| **MCP server** | `go-mcp/` |
 
 ## Use it from an AI agent (MCP)
 
@@ -99,7 +90,7 @@ The API exposes one entity:
 
 | Entity | Description | API path |
 | --- | --- | --- |
-| **Api** | The single random-answer resource exposed at `GET /api`, returning `answer`, `forced`, and `image` fields. | `/api` |
+| **Api** |  | `/api` |
 
 Each entity supports the following operations where available: **load**,
 **list**, **create**, **update**, and **remove**.
@@ -109,15 +100,17 @@ Each entity supports the following operations where available: **load**,
 ### Python
 
 ```python
+import os
 from yesnogenerator_sdk import YesnoGeneratorSDK
 
-client = YesnoGeneratorSDK({})
+client = YesnoGeneratorSDK({
+    "apikey": os.environ.get("YESNO-GENERATOR_APIKEY"),
+})
 
 
 # Load a specific api
-api, err = client.Api(None).load(
-    {"id": "example_id"}, None
-)
+api, err = client.Api().load({"id": "example_id"})
+print(api)
 ```
 
 ### PHP
@@ -126,13 +119,14 @@ api, err = client.Api(None).load(
 <?php
 require_once 'yesnogenerator_sdk.php';
 
-$client = new YesnoGeneratorSDK([]);
+$client = new YesnoGeneratorSDK([
+    "apikey" => getenv("YESNO-GENERATOR_APIKEY"),
+]);
 
 
 // Load a specific api
-[$api, $err] = $client->Api(null)->load(
-    ["id" => "example_id"], null
-);
+[$api, $err] = $client->Api()->load(["id" => "example_id"]);
+print_r($api);
 ```
 
 ### Golang
@@ -140,8 +134,13 @@ $client = new YesnoGeneratorSDK([]);
 ```go
 import sdk "github.com/voxgig-sdk/yesno-generator-sdk/go"
 
-client := sdk.NewYesnoGeneratorSDK(map[string]any{})
+client := sdk.NewYesnoGeneratorSDK(map[string]any{
+    "apikey": os.Getenv("YESNO-GENERATOR_APIKEY"),
+})
 
+// Load api data
+api, err := client.Api(nil).Load(map[string]any{}, nil)
+fmt.Println(api)
 ```
 
 ### Ruby
@@ -149,13 +148,14 @@ client := sdk.NewYesnoGeneratorSDK(map[string]any{})
 ```ruby
 require_relative "YesnoGenerator_sdk"
 
-client = YesnoGeneratorSDK.new({})
+client = YesnoGeneratorSDK.new({
+  "apikey" => ENV["YESNO-GENERATOR_APIKEY"],
+})
 
 
 # Load a specific api
-api, err = client.Api(nil).load(
-  { "id" => "example_id" }, nil
-)
+api, err = client.Api().load({ "id" => "example_id" })
+puts api
 ```
 
 ### Lua
@@ -163,13 +163,14 @@ api, err = client.Api(nil).load(
 ```lua
 local sdk = require("yesno-generator_sdk")
 
-local client = sdk.new({})
+local client = sdk.new({
+  apikey = os.getenv("YESNO-GENERATOR_APIKEY"),
+})
 
 
 -- Load a specific api
-local api, err = client:Api(nil):load(
-  { id = "example_id" }, nil
-)
+local api, err = client:Api():load({ id = "example_id" })
+print(api)
 ```
 
 ## Unit testing in offline mode
@@ -188,25 +189,21 @@ const result = await client.Api().load({ id: 'test01' })
 ### Python
 
 ```python
-client = YesnoGeneratorSDK.test(None, None)
-result, err = client.Api(None).load(
-    {"id": "test01"}, None
-)
+client = YesnoGeneratorSDK.test()
+result, err = client.Api().load({"id": "test01"})
 ```
 
 ### PHP
 
 ```php
-$client = YesnoGeneratorSDK::test(null, null);
-[$result, $err] = $client->Api(null)->load(
-    ["id" => "test01"], null
-);
+$client = YesnoGeneratorSDK::test();
+[$result, $err] = $client->Api()->load(["id" => "test01"]);
 ```
 
 ### Golang
 
 ```go
-client := sdk.TestSDK(nil, nil)
+client := sdk.Test()
 result, err := client.Api(nil).Load(
     map[string]any{"id": "test01"}, nil,
 )
@@ -215,19 +212,15 @@ result, err := client.Api(nil).Load(
 ### Ruby
 
 ```ruby
-client = YesnoGeneratorSDK.test(nil, nil)
-result, err = client.Api(nil).load(
-  { "id" => "test01" }, nil
-)
+client = YesnoGeneratorSDK.test
+result, err = client.Api().load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
-local client = sdk.test(nil, nil)
-local result, err = client:Api(nil):load(
-  { id = "test01" }, nil
-)
+local client = sdk.test()
+local result, err = client:Api():load({ id = "test01" })
 ```
 
 ## How it works
@@ -331,16 +324,6 @@ local result, err = client:direct({
 - [Golang](go/README.md)
 - [Ruby](rb/README.md)
 - [Lua](lua/README.md)
-
-## Using the YesNo Generator
-
-- Upstream: [https://yesno.wtf](https://yesno.wtf)
-- API docs: [https://yesno.wtf/api](https://yesno.wtf/api)
-
-- No licence terms are published on the API page or homepage.
-- No API key or authentication is required.
-- Response GIFs are hosted by yesno.wtf; check before redistributing them.
-- Treat as a best-effort hobby service with no SLA.
 
 ---
 

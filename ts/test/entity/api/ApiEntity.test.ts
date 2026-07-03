@@ -113,6 +113,7 @@ function basicSetup(extra?: any) {
     'YESNO_GENERATOR_TEST_API_ENTID': idmap,
     'YESNO_GENERATOR_TEST_LIVE': 'FALSE',
     'YESNO_GENERATOR_TEST_EXPLAIN': 'FALSE',
+    'YESNO_GENERATOR_APIKEY': 'NONE',
   })
 
   idmap = env['YESNO_GENERATOR_TEST_API_ENTID']
@@ -122,6 +123,7 @@ function basicSetup(extra?: any) {
   if (live) {
     client = new YesnoGeneratorSDK(merge([
       {
+        apikey: env.YESNO_GENERATOR_APIKEY,
       },
       extra
     ]))
