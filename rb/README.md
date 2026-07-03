@@ -10,13 +10,13 @@ The Ruby SDK for the YesnoGenerator API — an entity-oriented client using idio
 
 ## Install
 ```bash
-gem install yesno-generator-sdk
+gem install voxgig-sdk-yesno-generator
 ```
 
 Or add to your `Gemfile`:
 
 ```ruby
-gem "yesno-generator-sdk"
+gem "voxgig-sdk-yesno-generator"
 ```
 
 Then run:

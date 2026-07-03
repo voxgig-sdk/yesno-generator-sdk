@@ -10,7 +10,7 @@ The Python SDK for the YesnoGenerator API — an entity-oriented client followin
 
 ## Install
 ```bash
-pip install yesno-generator-sdk
+pip install voxgig-sdk-yesno-generator
 ```
 
 Or install from source:

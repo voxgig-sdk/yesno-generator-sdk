@@ -10,7 +10,7 @@ The Lua SDK for the YesnoGenerator API — an entity-oriented client using Lua c
 
 ## Install
 ```bash
-luarocks install yesno-generator-sdk
+luarocks install voxgig-sdk-yesno-generator
 ```
 
 If the module is not yet published, add the source directory to

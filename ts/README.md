@@ -10,7 +10,7 @@ The TypeScript SDK for the YesnoGenerator API — a type-safe, entity-oriented c
 
 ## Install
 ```bash
-npm install yesno-generator
+npm install @voxgig-sdk/yesno-generator
 ```
 ## Tutorial: your first API call
 

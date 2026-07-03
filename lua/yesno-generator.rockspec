@@ -8,12 +8,14 @@ source = {
   dir = "yesno-generator-sdk/lua"
 }
 description = {
-  summary = "YesnoGenerator SDK for Lua",
-  license = "MIT"
+  summary = "Unofficial generated Lua SDK for the YesNo Generator public API. Not affiliated with or endorsed by the upstream API provider.",
+  homepage = "https://github.com/voxgig-sdk/yesno-generator-sdk",
+  issues_url = "https://github.com/voxgig-sdk/yesno-generator-sdk/issues",
+  license = "MIT",
+  labels = { "voxgig", "sdk", "generated-sdk", "openapi", "api-client", "yesno-generator" }
 }
 dependencies = {
   "lua >= 5.3",
-  "dkjson >= 2.5",
   "dkjson >= 2.5",
 }
 build = {
