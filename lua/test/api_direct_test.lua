@@ -62,14 +62,12 @@ function api_direct_setup(mockres)
   local env = runner.env_override({
     ["YESNOGENERATOR_TEST_API_ENTID"] = {},
     ["YESNOGENERATOR_TEST_LIVE"] = "FALSE",
-    ["YESNOGENERATOR_APIKEY"] = "NONE",
   })
 
   local live = env["YESNOGENERATOR_TEST_LIVE"] == "TRUE"
 
   if live then
     local merged_opts = {
-      apikey = env["YESNOGENERATOR_APIKEY"],
     }
     local client = sdk.new(merged_opts)
     return {

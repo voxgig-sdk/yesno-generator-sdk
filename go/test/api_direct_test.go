@@ -99,14 +99,12 @@ func apiDirectSetup(mockres any) *apiDirectSetupResult {
 	env := envOverride(map[string]any{
 		"YESNOGENERATOR_TEST_API_ENTID": map[string]any{},
 		"YESNOGENERATOR_TEST_LIVE":    "FALSE",
-		"YESNOGENERATOR_APIKEY":       "NONE",
 	})
 
 	live := env["YESNOGENERATOR_TEST_LIVE"] == "TRUE"
 
 	if live {
 		mergedOpts := map[string]any{
-			"apikey": env["YESNOGENERATOR_APIKEY"],
 		}
 		client := sdk.NewYesnoGeneratorSDK(mergedOpts)
 
