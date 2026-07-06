@@ -90,9 +90,9 @@ local api = client:Api(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `answer` | ``$STRING`` | Yes |  |
-| `forced` | ``$BOOLEAN`` | Yes |  |
-| `image` | ``$STRING`` | Yes |  |
+| `answer` | `string` | Yes |  |
+| `forced` | `boolean` | Yes |  |
+| `image` | `string` | Yes |  |
 
 ### Operations
 
@@ -101,7 +101,7 @@ local api = client:Api(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:Api():load({ id = "api_id" })
+local result, err = client:Api():load()
 ```
 
 ### Common Methods

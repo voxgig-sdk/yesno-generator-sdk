@@ -8,7 +8,7 @@ Complete API reference for the YesnoGenerator Ruby SDK.
 ### Constructor
 
 ```ruby
-require_relative 'yesno-generator_sdk'
+require_relative 'YesnoGenerator_sdk'
 
 client = YesnoGeneratorSDK.new(options)
 ```
@@ -93,9 +93,9 @@ api = client.Api
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `answer` | ``$STRING`` | Yes |  |
-| `forced` | ``$BOOLEAN`` | Yes |  |
-| `image` | ``$STRING`` | Yes |  |
+| `answer` | `String` | Yes |  |
+| `forced` | `Boolean` | Yes |  |
+| `image` | `String` | Yes |  |
 
 ### Operations
 
@@ -104,7 +104,7 @@ api = client.Api
 Load a single entity matching the given criteria. Raises on error.
 
 ```ruby
-result = client.Api.load({ "id" => "api_id" })
+result = client.Api.load()
 ```
 
 ### Common Methods

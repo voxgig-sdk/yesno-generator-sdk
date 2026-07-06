@@ -116,9 +116,9 @@ const api = client.Api()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `answer` | ``$STRING`` | Yes |  |
-| `forced` | ``$BOOLEAN`` | Yes |  |
-| `image` | ``$STRING`` | Yes |  |
+| `answer` | `string` | Yes |  |
+| `forced` | `boolean` | Yes |  |
+| `image` | `string` | Yes |  |
 
 ### Operations
 
@@ -127,7 +127,7 @@ const api = client.Api()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.Api().load({ id: 'api_id' })
+const result = await client.Api().load()
 ```
 
 ### Common Methods

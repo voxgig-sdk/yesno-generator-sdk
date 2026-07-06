@@ -15,8 +15,7 @@ type Api struct {
 	Image string `json:"image"`
 }
 
-// ApiLoadMatch mirrors the api fields as an all-optional match
-// filter (Go analog of Partial<Api>).
+// ApiLoadMatch is the typed request payload for Api.LoadTyped.
 type ApiLoadMatch struct {
 	Answer *string `json:"answer,omitempty"`
 	Forced *bool `json:"forced,omitempty"`

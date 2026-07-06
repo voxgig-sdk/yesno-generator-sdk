@@ -11,5 +11,9 @@ export interface Api {
   image: string
 }
 
-export type ApiLoadMatch = Partial<Api>
+export interface ApiLoadMatch {
+  answer?: string
+  forced?: boolean
+  image?: string
+}
 

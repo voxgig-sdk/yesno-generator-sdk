@@ -8,7 +8,7 @@ Complete API reference for the YesnoGenerator Python SDK.
 ### Constructor
 
 ```python
-from yesno-generator_sdk import YesnoGeneratorSDK
+from yesnogenerator_sdk import YesnoGeneratorSDK
 
 client = YesnoGeneratorSDK(options)
 ```
@@ -87,9 +87,9 @@ api = client.Api()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `answer` | ``$STRING`` | Yes |  |
-| `forced` | ``$BOOLEAN`` | Yes |  |
-| `image` | ``$STRING`` | Yes |  |
+| `answer` | `str` | Yes |  |
+| `forced` | `bool` | Yes |  |
+| `image` | `str` | Yes |  |
 
 ### Operations
 
@@ -98,7 +98,7 @@ api = client.Api()
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.Api().load({"id": "api_id"})
+result = client.Api().load()
 ```
 
 ### Common Methods

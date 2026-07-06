@@ -20,7 +20,7 @@ class Api
     public string $image;
 }
 
-/** Match filter for Api#load (any subset of Api fields). */
+/** Request payload for Api#load. */
 class ApiLoadMatch
 {
     public ?string $answer = null;
