@@ -15,9 +15,9 @@ main: {
           url: "https://yesno.wtf"
         }
       ]
+      summary: "This API generates a random 'Yes' or 'No' response."
       title: "YesNo Generator"
       version: "1.0.0"
+      website: "https://yesno.wtf"
     }
   }
-}
-

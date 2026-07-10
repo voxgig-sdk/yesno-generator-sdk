@@ -6,9 +6,6 @@
     },
     "kit": {
       "config": {
-        "auth": {
-          "prefix": "Bearer"
-        },
         "docs_order": [
           "ts",
           "py",
@@ -221,14 +218,17 @@
           "url": "https://yesno.wtf/api"
         },
         "description": "This API generates a random 'Yes' or 'No' response.",
+        "meta_source": "https://www.freepublicapis.com",
         "servers": [
           {
             "description": "Production server",
             "url": "https://yesno.wtf"
           }
         ],
+        "summary": "This API generates a random 'Yes' or 'No' response.",
         "title": "YesNo Generator",
-        "version": "1.0.0"
+        "version": "1.0.0",
+        "website": "https://yesno.wtf"
       },
       "option": {},
       "target": {
@@ -281,6 +281,9 @@
           },
           "name": "go-cli",
           "phase": {
+            "agentguide": {
+              "active": false
+            },
             "entity": {
               "active": false
             },
@@ -331,6 +334,9 @@
           },
           "name": "go-mcp",
           "phase": {
+            "agentguide": {
+              "active": false
+            },
             "entity": {
               "active": false
             },
