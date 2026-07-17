@@ -1,4 +1,4 @@
--- ProjectName SDK exists test
+-- YesnoGenerator SDK exists test
 
 local sdk = require("yesno-generator_sdk")
 
