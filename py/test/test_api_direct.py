@@ -3,9 +3,9 @@
 import json
 import pytest
 
-from utility.voxgig_struct import voxgig_struct as vs
+from yesnogenerator_sdk.utility.voxgig_struct import voxgig_struct as vs
 from yesnogenerator_sdk import YesnoGeneratorSDK
-from core import helpers
+from yesnogenerator_sdk.core import helpers
 from test import runner
 
 
@@ -56,11 +56,11 @@ def _api_direct_setup(mockres):
     calls = []
 
     env = runner.env_override({
-        "YESNOGENERATOR_TEST_API_ENTID": {},
-        "YESNOGENERATOR_TEST_LIVE": "FALSE",
+        "YESNO_GENERATOR_TEST_API_ENTID": {},
+        "YESNO_GENERATOR_TEST_LIVE": "FALSE",
     })
 
-    live = env.get("YESNOGENERATOR_TEST_LIVE") == "TRUE"
+    live = env.get("YESNO_GENERATOR_TEST_LIVE") == "TRUE"
 
     if live:
         merged_opts = {

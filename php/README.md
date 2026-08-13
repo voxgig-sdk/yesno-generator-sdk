@@ -35,7 +35,7 @@ $client = new YesnoGeneratorSDK();
 
 ```php
 try {
-    // load() returns the bare Api record (throws on error).
+    // load() returns the ENTITY — call data_get() for the Api record (throws on error).
     $api = $client->Api()->load();
     print_r($api);
 } catch (\Throwable $err) {
@@ -123,7 +123,8 @@ Create a mock client for unit testing — no server required:
 ```php
 $client = YesnoGeneratorSDK::test();
 
-// Entity ops return the bare mock record (throws on error).
+// Entity ops return the ENTITY (throws on error);
+// call data_get() for the mock record.
 $api = $client->Api()->load();
 print_r($api);
 ```
@@ -222,7 +223,7 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return the bare result data (an `array` for single-entity
+Entity operations return the ENTITY (call data_get() for the record) (an `array` for single-entity
 ops, a `list` for `list`) and throw on error. Wrap calls in
 `try`/`catch` to handle failures.
 
@@ -278,7 +279,7 @@ Create an instance: `$api = $client->Api();`
 #### Example: Load
 
 ```php
-// load() returns the bare Api record (throws on error).
+// load() returns the ENTITY — call data_get() for the Api record (throws on error).
 $api = $client->Api()->load();
 ```
 

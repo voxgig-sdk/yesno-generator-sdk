@@ -67,6 +67,7 @@ module YesnoGeneratorConfig
                       },
                     ],
                   },
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/api",
                   "parts" => [

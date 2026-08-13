@@ -16,11 +16,11 @@
 import pytest
 
 from projectname_sdk import YesnoGeneratorSDK
-from core.error import YesnoGeneratorError
-from core.result import YesnoGeneratorResult
-from core.response import YesnoGeneratorResponse
-from core.spec import YesnoGeneratorSpec
-from feature.base_feature import YesnoGeneratorBaseFeature
+from projectname_sdk.core.error import YesnoGeneratorError
+from projectname_sdk.core.result import YesnoGeneratorResult
+from projectname_sdk.core.response import YesnoGeneratorResponse
+from projectname_sdk.core.spec import YesnoGeneratorSpec
+from projectname_sdk.feature.base_feature import YesnoGeneratorBaseFeature
 
 
 def _client():

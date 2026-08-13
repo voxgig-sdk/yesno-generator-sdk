@@ -121,7 +121,8 @@ Create a mock client for unit testing — no server required:
 const client = YesnoGeneratorSDK.test()
 
 const api = await client.Api().load()
-// api is a bare entity populated with mock response data
+// api is the entity, populated with mock response data
+// — call api.data() for the record itself
 console.log(api)
 ```
 

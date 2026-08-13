@@ -23,8 +23,8 @@ module YesnoGeneratorTestRunner
   end
 
   def self.env_override(m)
-    live = getenv("YESNOGENERATOR_TEST_LIVE")
-    override = getenv("YESNOGENERATOR_TEST_OVERRIDE")
+    live = getenv("YESNO_GENERATOR_TEST_LIVE")
+    override = getenv("YESNO_GENERATOR_TEST_OVERRIDE")
 
     if live == "TRUE" || override == "TRUE"
       m.each_key do |key|
@@ -44,8 +44,8 @@ module YesnoGeneratorTestRunner
       end
     end
 
-    explain = getenv("YESNOGENERATOR_TEST_EXPLAIN")
-    m["YESNOGENERATOR_TEST_EXPLAIN"] = explain if explain && !explain.empty?
+    explain = getenv("YESNO_GENERATOR_TEST_EXPLAIN")
+    m["YESNO_GENERATOR_TEST_EXPLAIN"] = explain if explain && !explain.empty?
 
     m
   end

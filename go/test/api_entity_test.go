@@ -44,7 +44,7 @@ func TestApiEntity(t *testing.T) {
 		// The basic flow consumes synthetic IDs from the fixture. In live mode
 		// without an *_ENTID env override, those IDs hit the live API and 4xx.
 		if setup.syntheticOnly {
-			t.Skip("live entity test uses synthetic IDs from fixture — set YESNOGENERATOR_TEST_API_ENTID JSON to run live")
+			t.Skip("live entity test uses synthetic IDs from fixture — set YESNO_GENERATOR_TEST_API_ENTID JSON to run live")
 			return
 		}
 		client := setup.client
@@ -110,21 +110,21 @@ func apiBasicSetup(extra map[string]any) *entityTestSetup {
 	// Detect ENTID env override before envOverride consumes it. When live
 	// mode is on without a real override, the basic test runs against synthetic
 	// IDs from the fixture and 4xx's. Surface this so the test can skip.
-	entidEnvRaw := os.Getenv("YESNOGENERATOR_TEST_API_ENTID")
+	entidEnvRaw := os.Getenv("YESNO_GENERATOR_TEST_API_ENTID")
 	idmapOverridden := entidEnvRaw != "" && strings.HasPrefix(strings.TrimSpace(entidEnvRaw), "{")
 
 	env := envOverride(map[string]any{
-		"YESNOGENERATOR_TEST_API_ENTID": idmap,
-		"YESNOGENERATOR_TEST_LIVE":      "FALSE",
-		"YESNOGENERATOR_TEST_EXPLAIN":   "FALSE",
+		"YESNO_GENERATOR_TEST_API_ENTID": idmap,
+		"YESNO_GENERATOR_TEST_LIVE":      "FALSE",
+		"YESNO_GENERATOR_TEST_EXPLAIN":   "FALSE",
 	})
 
-	idmapResolved := core.ToMapAny(env["YESNOGENERATOR_TEST_API_ENTID"])
+	idmapResolved := core.ToMapAny(env["YESNO_GENERATOR_TEST_API_ENTID"])
 	if idmapResolved == nil {
 		idmapResolved = core.ToMapAny(idmap)
 	}
 
-	if env["YESNOGENERATOR_TEST_LIVE"] == "TRUE" {
+	if env["YESNO_GENERATOR_TEST_LIVE"] == "TRUE" {
 		mergedOpts := vs.Merge([]any{
 			map[string]any{
 			},
@@ -133,13 +133,13 @@ func apiBasicSetup(extra map[string]any) *entityTestSetup {
 		client = sdk.NewYesnoGeneratorSDK(core.ToMapAny(mergedOpts))
 	}
 
-	live := env["YESNOGENERATOR_TEST_LIVE"] == "TRUE"
+	live := env["YESNO_GENERATOR_TEST_LIVE"] == "TRUE"
 	return &entityTestSetup{
 		client:        client,
 		data:          entityData,
 		idmap:         idmapResolved,
 		env:           env,
-		explain:       env["YESNOGENERATOR_TEST_EXPLAIN"] == "TRUE",
+		explain:       env["YESNO_GENERATOR_TEST_EXPLAIN"] == "TRUE",
 		live:          live,
 		syntheticOnly: live && !idmapOverridden,
 		now:           time.Now().UnixMilli(),

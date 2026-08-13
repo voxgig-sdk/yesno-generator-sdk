@@ -1,4 +1,4 @@
-# ProjectName SDK exists test
+# YesnoGenerator SDK exists test
 
 import pytest
 from yesnogenerator_sdk import YesnoGeneratorSDK

@@ -43,8 +43,8 @@ class YesnoGeneratorTestRunner
 
     public static function env_override(array $m): array
     {
-        $live = self::getenv('YESNOGENERATOR_TEST_LIVE');
-        $override = self::getenv('YESNOGENERATOR_TEST_OVERRIDE');
+        $live = self::getenv('YESNO_GENERATOR_TEST_LIVE');
+        $override = self::getenv('YESNO_GENERATOR_TEST_OVERRIDE');
 
         if ($live === 'TRUE' || $override === 'TRUE') {
             foreach (array_keys($m) as $key) {
@@ -63,9 +63,9 @@ class YesnoGeneratorTestRunner
             }
         }
 
-        $explain = self::getenv('YESNOGENERATOR_TEST_EXPLAIN');
+        $explain = self::getenv('YESNO_GENERATOR_TEST_EXPLAIN');
         if ($explain !== null && $explain !== '') {
-            $m['YESNOGENERATOR_TEST_EXPLAIN'] = $explain;
+            $m['YESNO_GENERATOR_TEST_EXPLAIN'] = $explain;
         }
 
         return $m;

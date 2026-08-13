@@ -60,11 +60,11 @@ function api_direct_setup(mockres)
   local calls = {}
 
   local env = runner.env_override({
-    ["YESNOGENERATOR_TEST_API_ENTID"] = {},
-    ["YESNOGENERATOR_TEST_LIVE"] = "FALSE",
+    ["YESNO_GENERATOR_TEST_API_ENTID"] = {},
+    ["YESNO_GENERATOR_TEST_LIVE"] = "FALSE",
   })
 
-  local live = env["YESNOGENERATOR_TEST_LIVE"] == "TRUE"
+  local live = env["YESNO_GENERATOR_TEST_LIVE"] == "TRUE"
 
   if live then
     local merged_opts = {

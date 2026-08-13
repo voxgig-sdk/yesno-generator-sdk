@@ -24,6 +24,7 @@ require_relative 'prepare_method'
 require_relative 'prepare_params'
 require_relative 'prepare_path'
 require_relative 'prepare_query'
+require_relative 'graphql'
 require_relative 'result_basic'
 require_relative 'result_body'
 require_relative 'result_headers'
@@ -55,6 +56,8 @@ YesnoGeneratorUtility.registrar = ->(u) {
   u.prepare_params = YesnoGeneratorUtilities::PrepareParams
   u.prepare_path = YesnoGeneratorUtilities::PreparePath
   u.prepare_query = YesnoGeneratorUtilities::PrepareQuery
+  u.graphql_body = YesnoGeneratorUtilities::GraphqlBody
+  u.graphql_errors = YesnoGeneratorUtilities::GraphqlErrors
   u.result_basic = YesnoGeneratorUtilities::ResultBasic
   u.result_body = YesnoGeneratorUtilities::ResultBody
   u.result_headers = YesnoGeneratorUtilities::ResultHeaders

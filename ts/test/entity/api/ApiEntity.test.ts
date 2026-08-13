@@ -26,8 +26,8 @@ import {
 describe('ApiEntity', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when YESNOGENERATOR_TEST_LIVE=TRUE.
-  afterEach(liveDelay('YESNOGENERATOR_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when YESNO_GENERATOR_TEST_LIVE=TRUE.
+  afterEach(liveDelay('YESNO_GENERATOR_TEST_LIVE'))
 
   test('instance', async () => {
     const testsdk = YesnoGeneratorSDK.test()
@@ -62,7 +62,7 @@ describe('ApiEntity', async () => {
     // LOAD
     const api_ref01_ent = client.Api()
     const api_ref01_match_dt0: any = {}
-    const api_ref01_data_dt0 = await api_ref01_ent.load(api_ref01_match_dt0)
+    const api_ref01_data_dt0 = (await api_ref01_ent.load(api_ref01_match_dt0)).data()
     assert(null != api_ref01_data_dt0)
 
 

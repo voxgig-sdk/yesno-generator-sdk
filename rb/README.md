@@ -34,7 +34,7 @@ client = YesnoGeneratorSDK.new
 
 ```ruby
 begin
-  # load returns the bare Api record (raises on error).
+  # load returns the ENTITY — call data_get for the Api record (raises on error).
   api = client.Api.load()
   puts api
 rescue => err
@@ -117,7 +117,8 @@ Create a mock client for unit testing — no server required:
 ```ruby
 client = YesnoGeneratorSDK.test
 
-# Entity ops return the bare mock record (raises on error).
+# Entity ops return the ENTITY (raises on error);
+# call data_get for the mock record.
 api = client.Api.load()
 puts api
 ```
@@ -268,7 +269,7 @@ Create an instance: `api = client.Api`
 #### Example: Load
 
 ```ruby
-# load returns the bare Api record (raises on error).
+# load returns the ENTITY — call data_get for the Api record (raises on error).
 api = client.Api.load()
 ```
 
