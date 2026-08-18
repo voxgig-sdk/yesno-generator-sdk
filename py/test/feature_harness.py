@@ -14,7 +14,7 @@ from __future__ import annotations
 
 from urllib.parse import quote
 
-from yesnogenerator_sdk.config import make_config
+from yesnogenerator_sdk.config import shared_config
 from yesnogenerator_sdk.features import _make_feature
 from yesnogenerator_sdk.core.control import YesnoGeneratorControl
 from yesnogenerator_sdk.core.error import YesnoGeneratorError
@@ -24,7 +24,7 @@ from yesnogenerator_sdk.core.spec import YesnoGeneratorSpec
 
 # True when this SDK was generated with the named feature.
 def has_feature(name):
-    feature = make_config().get("feature")
+    feature = shared_config().get("feature")
     return isinstance(feature, dict) and feature.get(name) is not None
 
 

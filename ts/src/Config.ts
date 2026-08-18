@@ -36,7 +36,7 @@ class Config {
 
 
   options = {
-    base: 'https://yesno.wtf',
+    base: "https://yesno.wtf",
 
     headers: {
       "content-type": "application/json"
@@ -55,25 +55,19 @@ class Config {
     "api": {
       "fields": [
         {
-          "active": true,
           "name": "answer",
           "req": true,
-          "type": "`$STRING`",
-          "index$": 0
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "forced",
           "req": true,
-          "type": "`$BOOLEAN`",
-          "index$": 1
+          "type": "`$BOOLEAN`"
         },
         {
-          "active": true,
           "name": "image",
           "req": true,
-          "type": "`$STRING`",
-          "index$": 2
+          "type": "`$STRING`"
         }
       ],
       "name": "api",
@@ -83,15 +77,12 @@ class Config {
           "name": "load",
           "points": [
             {
-              "active": true,
               "args": {
                 "query": [
                   {
-                    "active": true,
                     "kind": "query",
                     "name": "force",
                     "orig": "force",
-                    "reqd": false,
                     "type": "`$STRING`"
                   }
                 ]
@@ -110,11 +101,9 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              },
-              "index$": 0
+              }
             }
-          ],
-          "key$": "load"
+          ]
         }
       },
       "relations": {

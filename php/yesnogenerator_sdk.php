@@ -40,7 +40,7 @@ class YesnoGeneratorSDK
         $utility = new YesnoGeneratorUtility();
         $this->_utility = $utility;
 
-        $config = YesnoGeneratorConfig::make_config();
+        $config = YesnoGeneratorConfig::shared_config();
 
         $this->_rootctx = ($utility->make_context)([
             "client" => $this,

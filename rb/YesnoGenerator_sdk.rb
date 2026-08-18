@@ -28,7 +28,7 @@ class YesnoGeneratorSDK
     utility = YesnoGeneratorUtility.new
     @_utility = utility
 
-    config = YesnoGeneratorConfig.make_config
+    config = YesnoGeneratorConfig.shared_config
 
     @_rootctx = utility.make_context.call({
       "client" => self,
