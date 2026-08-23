@@ -28,6 +28,9 @@ def make_config():
     return {
         "main": {
             "name": "YesnoGenerator",
+            "slug": "yesno-generator",
+            "version": "0.0.1",
+            "target": "py",
         },
         "feature": {
             "test": {
@@ -51,16 +54,19 @@ def make_config():
           {
             "name": "answer",
             "req": True,
+            "short": "The answer: 'yes' or 'no'",
             "type": "`$STRING`",
           },
           {
             "name": "forced",
             "req": True,
+            "short": "Indicates whether the answer was forced via query parameter",
             "type": "`$BOOLEAN`",
           },
           {
             "name": "image",
             "req": True,
+            "short": "URL of a GIF image corresponding to the answer",
             "type": "`$STRING`",
           },
         ],

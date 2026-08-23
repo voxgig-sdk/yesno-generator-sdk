@@ -235,9 +235,9 @@ returns a result `Hash` with these keys:
 
 | Field | Description |
 | --- | --- |
-| `answer` |  |
-| `forced` |  |
-| `image` |  |
+| `answer` | The answer: 'yes' or 'no' |
+| `forced` | Indicates whether the answer was forced via query parameter |
+| `image` | URL of a GIF image corresponding to the answer |
 
 Operations: Load.
 
@@ -262,9 +262,9 @@ Create an instance: `api = client.Api`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `answer` | `String` |  |
-| `forced` | `Boolean` |  |
-| `image` | `String` |  |
+| `answer` | `String` | The answer: 'yes' or 'no' |
+| `forced` | `Boolean` | Indicates whether the answer was forced via query parameter |
+| `image` | `String` | URL of a GIF image corresponding to the answer |
 
 #### Example: Load
 

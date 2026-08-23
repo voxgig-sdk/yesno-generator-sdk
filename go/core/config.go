@@ -11,6 +11,9 @@ func MakeConfig() map[string]any {
 	return map[string]any{
 		"main": map[string]any{
 			"name": "YesnoGenerator",
+			"slug": "yesno-generator",
+			"version": "0.0.1",
+			"target": "go",
 		},
 		"feature": map[string]any{
 			"test": map[string]any{
@@ -34,16 +37,19 @@ func MakeConfig() map[string]any {
 					map[string]any{
 						"name": "answer",
 						"req": true,
+						"short": "The answer: 'yes' or 'no'",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "forced",
 						"req": true,
+						"short": "Indicates whether the answer was forced via query parameter",
 						"type": "`$BOOLEAN`",
 					},
 					map[string]any{
 						"name": "image",
 						"req": true,
+						"short": "URL of a GIF image corresponding to the answer",
 						"type": "`$STRING`",
 					},
 				},

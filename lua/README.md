@@ -225,9 +225,9 @@ Only `direct()` returns a response envelope — a `table` with `ok`,
 
 | Field | Description |
 | --- | --- |
-| `answer` |  |
-| `forced` |  |
-| `image` |  |
+| `answer` | The answer: 'yes' or 'no' |
+| `forced` | Indicates whether the answer was forced via query parameter |
+| `image` | URL of a GIF image corresponding to the answer |
 
 Operations: Load.
 
@@ -252,9 +252,9 @@ Create an instance: `local api = client:Api(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `answer` | `string` |  |
-| `forced` | `boolean` |  |
-| `image` | `string` |  |
+| `answer` | `string` | The answer: 'yes' or 'no' |
+| `forced` | `boolean` | Indicates whether the answer was forced via query parameter |
+| `image` | `string` | URL of a GIF image corresponding to the answer |
 
 #### Example: Load
 

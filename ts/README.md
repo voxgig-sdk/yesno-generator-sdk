@@ -9,7 +9,7 @@ The API is exposed as capitalised, semantic **Entities** — e.g.
 instead of raw URL paths and query parameters. This keeps the surface
 predictable and low-friction for both humans and AI agents.
 
-> Other languages, the CLI, and MCP server live alongside this one — see
+> Also generated from this model: `go`, `go-cli`, `go-mcp`, `lua`, `php`, `py`, `rb` — see
 > the [top-level README](../README.md).
 
 
@@ -285,9 +285,9 @@ The `prepare()` method returns:
 
 | Field | Description |
 | --- | --- |
-| `answer` |  |
-| `forced` |  |
-| `image` |  |
+| `answer` | The answer: 'yes' or 'no' |
+| `forced` | Indicates whether the answer was forced via query parameter |
+| `image` | URL of a GIF image corresponding to the answer |
 
 Operations: load.
 
@@ -312,9 +312,9 @@ Create an instance: `const api = client.Api()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `answer` | `string` |  |
-| `forced` | `boolean` |  |
-| `image` | `string` |  |
+| `answer` | `string` | The answer: 'yes' or 'no' |
+| `forced` | `boolean` | Indicates whether the answer was forced via query parameter |
+| `image` | `string` | URL of a GIF image corresponding to the answer |
 
 #### Example: Load
 

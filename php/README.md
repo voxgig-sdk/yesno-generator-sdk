@@ -245,9 +245,9 @@ On error, `ok` is `false` and `$err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `answer` |  |
-| `forced` |  |
-| `image` |  |
+| `answer` | The answer: 'yes' or 'no' |
+| `forced` | Indicates whether the answer was forced via query parameter |
+| `image` | URL of a GIF image corresponding to the answer |
 
 Operations: Load.
 
@@ -272,9 +272,9 @@ Create an instance: `$api = $client->Api();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `answer` | `string` |  |
-| `forced` | `bool` |  |
-| `image` | `string` |  |
+| `answer` | `string` | The answer: 'yes' or 'no' |
+| `forced` | `bool` | Indicates whether the answer was forced via query parameter |
+| `image` | `string` | URL of a GIF image corresponding to the answer |
 
 #### Example: Load
 

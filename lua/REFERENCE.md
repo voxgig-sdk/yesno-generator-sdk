@@ -90,9 +90,9 @@ local api = client:Api(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `answer` | `string` | Yes |  |
-| `forced` | `boolean` | Yes |  |
-| `image` | `string` | Yes |  |
+| `answer` | `string` | Yes | The answer: 'yes' or 'no' |
+| `forced` | `boolean` | Yes | Indicates whether the answer was forced via query parameter |
+| `image` | `string` | Yes | URL of a GIF image corresponding to the answer |
 
 ### Operations
 

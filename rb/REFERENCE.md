@@ -93,9 +93,9 @@ api = client.Api
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `answer` | `String` | Yes |  |
-| `forced` | `Boolean` | Yes |  |
-| `image` | `String` | Yes |  |
+| `answer` | `String` | Yes | The answer: 'yes' or 'no' |
+| `forced` | `Boolean` | Yes | Indicates whether the answer was forced via query parameter |
+| `image` | `String` | Yes | URL of a GIF image corresponding to the answer |
 
 ### Operations
 

@@ -6,7 +6,7 @@ The Golang SDK for the YesnoGenerator API — an entity-oriented client using st
 
 It exposes the API as capitalised, semantic **Entities** — e.g. `client.Api(nil)` — each with the same small set of operations (`Load`) instead of raw URL paths and query strings. You call meaning, not endpoints, which keeps the cognitive load low.
 
-> Other languages, the CLI, and MCP server live alongside this one — see
+> Also generated from this model: `go-cli`, `go-mcp`, `lua`, `php`, `py`, `rb`, `ts` — see
 > the [top-level README](../README.md).
 
 
@@ -258,9 +258,9 @@ Only `Direct()` returns a response envelope — a `map[string]any` with
 
 | Field | Description |
 | --- | --- |
-| `"answer"` |  |
-| `"forced"` |  |
-| `"image"` |  |
+| `"answer"` | The answer: 'yes' or 'no' |
+| `"forced"` | Indicates whether the answer was forced via query parameter |
+| `"image"` | URL of a GIF image corresponding to the answer |
 
 Operations: Load.
 
@@ -285,9 +285,9 @@ Create an instance: `api := client.Api(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `answer` | `string` |  |
-| `forced` | `bool` |  |
-| `image` | `string` |  |
+| `answer` | `string` | The answer: 'yes' or 'no' |
+| `forced` | `bool` | Indicates whether the answer was forced via query parameter |
+| `image` | `string` | URL of a GIF image corresponding to the answer |
 
 #### Example: Load
 

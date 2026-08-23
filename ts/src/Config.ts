@@ -19,9 +19,20 @@ class Config {
     return fi
   }
 
+  // False for a feature added at runtime via options.extend (station's
+  // adopt path) - the constructor uses this to skip makeFeature for names
+  // no generated class backs.
+  hasFeature(this: any, fn: string) {
+    return null != FEATURE_CLASS[fn]
+  }
+
 
   main = {
     name: 'YesnoGenerator',
+        slug: "yesno-generator",
+    version: "0.0.1",
+    target: "ts",
+
   }
 
 
@@ -57,16 +68,19 @@ class Config {
         {
           "name": "answer",
           "req": true,
+          "short": "The answer: 'yes' or 'no'",
           "type": "`$STRING`"
         },
         {
           "name": "forced",
           "req": true,
+          "short": "Indicates whether the answer was forced via query parameter",
           "type": "`$BOOLEAN`"
         },
         {
           "name": "image",
           "req": true,
+          "short": "URL of a GIF image corresponding to the answer",
           "type": "`$STRING`"
         }
       ],

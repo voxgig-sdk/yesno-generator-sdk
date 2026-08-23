@@ -33,6 +33,9 @@ class YesnoGeneratorConfig
         return [
             "main" => [
                 "name" => "YesnoGenerator",
+                "slug" => "yesno-generator",
+                "version" => "0.0.1",
+                "target" => "php",
             ],
             "feature" => [
                 "test" => [
@@ -56,16 +59,19 @@ class YesnoGeneratorConfig
             [
               'name' => 'answer',
               'req' => true,
+              'short' => 'The answer: \'yes\' or \'no\'',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'forced',
               'req' => true,
+              'short' => 'Indicates whether the answer was forced via query parameter',
               'type' => '`$BOOLEAN`',
             ],
             [
               'name' => 'image',
               'req' => true,
+              'short' => 'URL of a GIF image corresponding to the answer',
               'type' => '`$STRING`',
             ],
           ],
