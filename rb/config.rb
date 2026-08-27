@@ -28,6 +28,7 @@ module YesnoGeneratorConfig
           "options" => {
             "active" => false,
           },
+          "transport" => "base",
         },
       },
       "options" => {
