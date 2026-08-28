@@ -27,18 +27,10 @@ Api = Struct.new(
 
 # Request payload for Api#load.
 #
-# @!attribute [rw] answer
-#   @return [String, nil]
-#
-# @!attribute [rw] forced
-#   @return [Boolean, nil]
-#
-# @!attribute [rw] image
+# @!attribute [rw] force
 #   @return [String, nil]
 ApiLoadMatch = Struct.new(
-  :answer,
-  :forced,
-  :image,
+  :force,
   keyword_init: true
 )
 

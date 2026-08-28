@@ -12,9 +12,7 @@
 ---@field image string
 
 ---@class ApiLoadMatch
----@field answer? string
----@field forced? boolean
----@field image? string
+---@field force? string
 
 local M = {}
 

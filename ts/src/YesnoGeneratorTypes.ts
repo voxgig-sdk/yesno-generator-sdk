@@ -12,8 +12,6 @@ export interface Api {
 }
 
 export interface ApiLoadMatch {
-  answer?: string
-  forced?: boolean
-  image?: string
+  force?: string
 }
 

@@ -23,8 +23,6 @@ class Api
 /** Request payload for Api#load. */
 class ApiLoadMatch
 {
-    public ?string $answer = null;
-    public ?bool $forced = null;
-    public ?string $image = null;
+    public ?string $force = null;
 }
 

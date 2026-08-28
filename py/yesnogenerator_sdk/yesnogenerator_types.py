@@ -23,6 +23,4 @@ class Api(TypedDict):
 
 
 class ApiLoadMatch(TypedDict, total=False):
-    answer: str
-    forced: bool
-    image: str
+    force: str

@@ -21,9 +21,7 @@ type Api struct {
 
 // ApiLoadMatch is the typed request payload for Api.LoadTyped.
 type ApiLoadMatch struct {
-	Answer *string `json:"answer,omitempty"`
-	Forced *bool `json:"forced,omitempty"`
-	Image *string `json:"image,omitempty"`
+	Force *string `json:"force,omitempty"`
 }
 
 // asMap turns a typed request/data struct into the map[string]any the
