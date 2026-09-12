@@ -70,6 +70,7 @@ class YesnoGeneratorConfig
               'type' => '`$BOOLEAN`',
             ],
             [
+              'format' => 'uri',
               'name' => 'image',
               'req' => true,
               'short' => 'URL of a GIF image corresponding to the answer',
@@ -96,8 +97,10 @@ class YesnoGeneratorConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/api',
-                  'parts' => [
-                    'api',
+                  'segments' => [
+                    [
+                      'lit' => 'api',
+                    ],
                   ],
                   'select' => [
                     'exist' => [
@@ -107,6 +110,9 @@ class YesnoGeneratorConfig
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'api',
                   ],
                 ],
               ],
