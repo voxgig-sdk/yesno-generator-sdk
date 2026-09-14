@@ -105,7 +105,7 @@ local result, err = client:Api():load()
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/yesno-generator` | publish pending — [install from git tag](https://github.com/voxgig-sdk/yesno-generator-sdk/releases) |
+| TypeScript | `@voxgig-sdk/yesno-generator-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/yesno-generator-sdk/releases) |
 | Python | `voxgig-sdk-yesno-generator` | publish pending — [install from git tag](https://github.com/voxgig-sdk/yesno-generator-sdk/releases) |
 | PHP | `voxgig-sdk/yesno-generator` | publish pending — [install from git tag](https://github.com/voxgig-sdk/yesno-generator-sdk/releases) |
 | Golang | `github.com/voxgig-sdk/yesno-generator-sdk/go` | `go get github.com/voxgig-sdk/yesno-generator-sdk/go@latest` |
@@ -119,7 +119,7 @@ local result, err = client:Api():load()
 ### TypeScript
 
 ```ts
-import { YesnoGeneratorSDK } from '@voxgig-sdk/yesno-generator'
+import { YesnoGeneratorSDK } from '@voxgig-sdk/yesno-generator-sdk'
 
 const client = new YesnoGeneratorSDK()
 

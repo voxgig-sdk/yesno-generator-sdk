@@ -28,7 +28,7 @@ loading a specific record.
 ### 1. Create a client
 
 ```ts
-import { YesnoGeneratorSDK } from '@voxgig-sdk/yesno-generator'
+import { YesnoGeneratorSDK } from '@voxgig-sdk/yesno-generator-sdk'
 
 const client = new YesnoGeneratorSDK()
 ```
@@ -405,7 +405,7 @@ yesno-generator/
 Import the SDK from the package root:
 
 ```ts
-import { YesnoGeneratorSDK } from '@voxgig-sdk/yesno-generator'
+import { YesnoGeneratorSDK } from '@voxgig-sdk/yesno-generator-sdk'
 ```
 
 ### Entity state
