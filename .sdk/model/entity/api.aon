@@ -43,6 +43,12 @@ main: kit: entity: api: {
               }
             ]
           }
+          contract: {
+            id: "GET /api"
+            json: "{\"operationId\":\"getYesNoAnswer\",\"parameters\":[{\"description\":\"Force a specific answer ('yes' or 'no')\",\"in\":\"query\",\"name\":\"force\",\"required\":false,\"schema\":{\"enum\":[\"yes\",\"no\"],\"type\":\"string\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"example\":{\"answer\":\"no\",\"forced\":false,\"image\":\"https://yesno.wtf/assets/no/24-159febcfd655625c38c147b65e5be565.gif\"},\"schema\":{\"properties\":{\"answer\":{\"description\":\"The answer: 'yes' or 'no'\",\"enum\":[\"yes\",\"no\"],\"type\":\"string\"},\"forced\":{\"description\":\"Indicates whether the answer was forced via query parameter\",\"type\":\"boolean\"},\"image\":{\"description\":\"URL of a GIF image corresponding to the answer\",\"format\":\"uri\",\"type\":\"string\"}},\"required\":[\"answer\",\"forced\",\"image\"],\"type\":\"object\"}}},\"description\":\"Successful response with yes/no answer\"}},\"securitySource\":\"unspecified\"}"
+            source: "openapi3"
+            version: 1
+          }
           method: "GET"
           orig: "/api"
           segments: [
