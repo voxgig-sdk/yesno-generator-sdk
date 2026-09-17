@@ -105,12 +105,12 @@ local result, err = client:Api():load()
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/yesno-generator-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/yesno-generator-sdk/releases) |
-| Python | `voxgig-sdk-yesno-generator` | publish pending — [install from git tag](https://github.com/voxgig-sdk/yesno-generator-sdk/releases) |
-| PHP | `voxgig-sdk/yesno-generator` | publish pending — [install from git tag](https://github.com/voxgig-sdk/yesno-generator-sdk/releases) |
+| TypeScript | `@voxgig-sdk/yesno-generator-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/yesno-generator-sdk/tags) |
+| Python | `voxgig-sdk-yesno-generator` | publish pending — [install from git tag](https://github.com/voxgig-sdk/yesno-generator-sdk/tags) |
+| PHP | `voxgig-sdk/yesno-generator` | publish pending — [install from git tag](https://github.com/voxgig-sdk/yesno-generator-sdk/tags) |
 | Golang | `github.com/voxgig-sdk/yesno-generator-sdk/go` | `go get github.com/voxgig-sdk/yesno-generator-sdk/go@latest` |
-| Ruby | `voxgig-sdk-yesno-generator` | publish pending — [install from git tag](https://github.com/voxgig-sdk/yesno-generator-sdk/releases) |
-| Lua | `voxgig-sdk-yesno-generator` | publish pending — [install from git tag](https://github.com/voxgig-sdk/yesno-generator-sdk/releases) |
+| Ruby | `voxgig-sdk-yesno-generator` | publish pending — [install from git tag](https://github.com/voxgig-sdk/yesno-generator-sdk/tags) |
+| Lua | `voxgig-sdk-yesno-generator` | publish pending — [install from git tag](https://github.com/voxgig-sdk/yesno-generator-sdk/tags) |
 | Go CLI | `github.com/voxgig-sdk/yesno-generator-sdk/go-cli` | `go install github.com/voxgig-sdk/yesno-generator-sdk/go-cli/cmd/yesno-generator@latest` |
 | Go MCP server | `github.com/voxgig-sdk/yesno-generator-sdk/go-mcp` | `go get github.com/voxgig-sdk/yesno-generator-sdk/go-mcp@latest` |
 
