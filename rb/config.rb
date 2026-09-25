@@ -99,22 +99,25 @@ module YesnoGeneratorConfig
           "fields" => [
             {
               "name" => "answer",
+              "title" => "Answer",
+              "type" => "`$STRING`",
               "req" => true,
               "short" => "The answer: 'yes' or 'no'",
-              "type" => "`$STRING`",
             },
             {
               "name" => "forced",
+              "title" => "Forced",
+              "type" => "`$BOOLEAN`",
               "req" => true,
               "short" => "Indicates whether the answer was forced via query parameter",
-              "type" => "`$BOOLEAN`",
             },
             {
-              "format" => "uri",
               "name" => "image",
+              "title" => "Image",
+              "type" => "`$STRING`",
               "req" => true,
               "short" => "URL of a GIF image corresponding to the answer",
-              "type" => "`$STRING`",
+              "format" => "uri",
             },
           ],
           "name" => "api",
@@ -124,16 +127,6 @@ module YesnoGeneratorConfig
               "name" => "load",
               "points" => [
                 {
-                  "args" => {
-                    "query" => [
-                      {
-                        "kind" => "query",
-                        "name" => "force",
-                        "orig" => "force",
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/api",
@@ -142,18 +135,29 @@ module YesnoGeneratorConfig
                       "lit" => "api",
                     },
                   ],
+                  "parts" => [
+                    "api",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "query" => [
+                      {
+                        "name" => "force",
+                        "orig" => "force",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "force",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "api",
-                  ],
                 },
               ],
             },

@@ -1,0 +1,77 @@
+# Entity: api
+
+main: kit: entity: api: {
+
+  alias: field: {}
+
+  fields: {
+    answer: {
+      h: "Answer"
+      n: "answer"
+      r: true
+      sh: "The answer: 'yes' or 'no'"
+      t: "`$STRING`"
+    }
+    forced: {
+      h: "Forced"
+      n: "forced"
+      r: true
+      sh: "Indicates whether the answer was forced via query parameter"
+      t: "`$BOOLEAN`"
+    }
+    image: {
+      fo: "uri"
+      h: "Image"
+      n: "image"
+      r: true
+      sh: "URL of a GIF image corresponding to the answer"
+      t: "`$STRING`"
+    }
+  }
+
+  name: "api"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /api"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                k: "query"
+                n: "force"
+                or: "force"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/api"
+          q: {
+            exist: [
+              "force"
+            ]
+          }
+          s: [
+            {
+              lit: "api"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

@@ -91,22 +91,25 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "answer",
+						"title": "Answer",
+						"type": "`$STRING`",
 						"req": true,
 						"short": "The answer: 'yes' or 'no'",
-						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "forced",
+						"title": "Forced",
+						"type": "`$BOOLEAN`",
 						"req": true,
 						"short": "Indicates whether the answer was forced via query parameter",
-						"type": "`$BOOLEAN`",
 					},
 					map[string]any{
-						"format": "uri",
 						"name": "image",
+						"title": "Image",
+						"type": "`$STRING`",
 						"req": true,
 						"short": "URL of a GIF image corresponding to the answer",
-						"type": "`$STRING`",
+						"format": "uri",
 					},
 				},
 				"name": "api",
@@ -116,16 +119,6 @@ func MakeConfig() map[string]any {
 						"name": "load",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{
-									"query": []any{
-										map[string]any{
-											"kind": "query",
-											"name": "force",
-											"orig": "force",
-											"type": "`$STRING`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "GET",
 								"orig": "/api",
@@ -134,17 +127,28 @@ func MakeConfig() map[string]any {
 										"lit": "api",
 									},
 								},
-								"select": map[string]any{
-									"exist": []any{
-										"force",
-									},
+								"parts": []any{
+									"api",
 								},
+								"rename": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
 								},
-								"parts": []any{
-									"api",
+								"args": map[string]any{
+									"query": []any{
+										map[string]any{
+											"name": "force",
+											"orig": "force",
+											"type": "`$STRING`",
+											"kind": "query",
+										},
+									},
+								},
+								"select": map[string]any{
+									"exist": []any{
+										"force",
+									},
 								},
 							},
 						},

@@ -113,22 +113,25 @@ class YesnoGeneratorConfig
           'fields' => [
             [
               'name' => 'answer',
+              'title' => 'Answer',
+              'type' => '`$STRING`',
               'req' => true,
               'short' => 'The answer: \'yes\' or \'no\'',
-              'type' => '`$STRING`',
             ],
             [
               'name' => 'forced',
+              'title' => 'Forced',
+              'type' => '`$BOOLEAN`',
               'req' => true,
               'short' => 'Indicates whether the answer was forced via query parameter',
-              'type' => '`$BOOLEAN`',
             ],
             [
-              'format' => 'uri',
               'name' => 'image',
+              'title' => 'Image',
+              'type' => '`$STRING`',
               'req' => true,
               'short' => 'URL of a GIF image corresponding to the answer',
-              'type' => '`$STRING`',
+              'format' => 'uri',
             ],
           ],
           'name' => 'api',
@@ -138,16 +141,6 @@ class YesnoGeneratorConfig
               'name' => 'load',
               'points' => [
                 [
-                  'args' => [
-                    'query' => [
-                      [
-                        'kind' => 'query',
-                        'name' => 'force',
-                        'orig' => 'force',
-                        'type' => '`$STRING`',
-                      ],
-                    ],
-                  ],
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/api',
@@ -156,17 +149,28 @@ class YesnoGeneratorConfig
                       'lit' => 'api',
                     ],
                   ],
-                  'select' => [
-                    'exist' => [
-                      'force',
-                    ],
+                  'parts' => [
+                    'api',
                   ],
+                  'rename' => [],
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
                   ],
-                  'parts' => [
-                    'api',
+                  'args' => [
+                    'query' => [
+                      [
+                        'name' => 'force',
+                        'orig' => 'force',
+                        'type' => '`$STRING`',
+                        'kind' => 'query',
+                      ],
+                    ],
+                  ],
+                  'select' => [
+                    'exist' => [
+                      'force',
+                    ],
                   ],
                 ],
               ],

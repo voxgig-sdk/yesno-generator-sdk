@@ -116,22 +116,25 @@ def make_config():
         "fields": [
           {
             "name": "answer",
+            "title": "Answer",
+            "type": "`$STRING`",
             "req": True,
             "short": "The answer: 'yes' or 'no'",
-            "type": "`$STRING`",
           },
           {
             "name": "forced",
+            "title": "Forced",
+            "type": "`$BOOLEAN`",
             "req": True,
             "short": "Indicates whether the answer was forced via query parameter",
-            "type": "`$BOOLEAN`",
           },
           {
-            "format": "uri",
             "name": "image",
+            "title": "Image",
+            "type": "`$STRING`",
             "req": True,
             "short": "URL of a GIF image corresponding to the answer",
-            "type": "`$STRING`",
+            "format": "uri",
           },
         ],
         "name": "api",
@@ -141,16 +144,6 @@ def make_config():
             "name": "load",
             "points": [
               {
-                "args": {
-                  "query": [
-                    {
-                      "kind": "query",
-                      "name": "force",
-                      "orig": "force",
-                      "type": "`$STRING`",
-                    },
-                  ],
-                },
                 "kind": "http",
                 "method": "GET",
                 "orig": "/api",
@@ -159,18 +152,29 @@ def make_config():
                     "lit": "api",
                   },
                 ],
+                "parts": [
+                  "api",
+                ],
+                "rename": {},
+                "transform": {
+                  "req": "`reqdata`",
+                  "res": "`body`",
+                },
+                "args": {
+                  "query": [
+                    {
+                      "name": "force",
+                      "orig": "force",
+                      "type": "`$STRING`",
+                      "kind": "query",
+                    },
+                  ],
+                },
                 "select": {
                   "exist": [
                     "force",
                   ],
                 },
-                "transform": {
-                  "req": "`reqdata`",
-                  "res": "`body`",
-                },
-                "parts": [
-                  "api",
-                ],
               },
             ],
           },

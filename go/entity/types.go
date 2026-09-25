@@ -1,7 +1,7 @@
 // Typed models for the YesnoGenerator SDK.
 //
-// GENERATED from the API model: main.kit.entity.<e>.fields[] and per-op
-// params (op.<name>.points[].args.params[]). Field/param types come from the
+// GENERATED from the API model: main.kit.entity.<e>.fields{} and per-op
+// params (op.<name>.points[].g.params[]). Field/param types come from the
 // canonical type sentinels via @voxgig/sdkgen canonToType (source of truth:
 // @voxgig/apidef VALID_CANON). Do not edit by hand.
 package entity
@@ -14,9 +14,6 @@ import (
 
 // Api is the typed data model for the api entity.
 type Api struct {
-	Answer string `json:"answer"`
-	Forced bool `json:"forced"`
-	Image string `json:"image"`
 }
 
 // ApiLoadMatch is the typed request payload for Api.LoadTyped.
